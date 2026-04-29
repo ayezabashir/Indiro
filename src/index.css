@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
-
-
+/* Semicolon add kiya yahan */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 @theme {
+  /* Poori body ke liye Roboto set karne ka tareeka */
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Aapke existing variables */
   --color-brand-orange: #fe4c1c;
   --color-brand-navy: #192436;
   --color-brand-slate: #2d384a;
@@ -11,12 +15,22 @@
   --color-text-muted: #9ca3af;
   --transition-slow: 0.5s ease-in-out;
 }
+
 @font-face {
   font-family: 'Oswald';
   src: url('../public/OswaldFont.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
+
+/* Base layer mein body par default apply kar dena safe rehta hai */
+@layer base {
+  body {
+    @apply font-sans;
+  }
+}
+
+/* Aapki baaki classes */
 .header-bg-split {
   @apply absolute inset-0 flex;
 }
@@ -41,13 +55,10 @@
 }
 
 @keyframes side-to-side {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateX(-12px);
     opacity: 0.3;
   }
-
   50% {
     transform: translateX(12px);
     opacity: 1;

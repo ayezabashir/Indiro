@@ -54,12 +54,12 @@ const Header = () => {
           </div>
         </div>
 
-        <div className="h-24 flex items-center justify-between container mx-auto px-4">
+        <div className="h-24 flex items-center gap-30 container mx-auto px-4">
           <div className="w-[20%] flex items-center">
             <img src={logoimg} alt="Indiro" className="w-48" />
           </div>
 
-          <div className="flex items-center">
+          <div className="flex  items-center justify-between w-[70%]">
             <nav className="flex font-Oswald items-center gap-10 mr-12 text-white text-[16px] font-bold uppercase tracking-widest">
               <Link
                 to="/"
