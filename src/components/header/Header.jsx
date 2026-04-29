@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${isSticky ? "-translate-y-12" : "translate-y-0"}`}
+      className={`fixed top-0 left-0 w-full z-999 transition-all duration-300 ${isSticky ? "-translate-y-12" : "translate-y-0"}`}
     >
       <div className="absolute inset-0 w-full h-full flex flex-col pointer-events-none">
         <div className="h-12 w-full flex">
@@ -31,7 +31,7 @@ const Header = () => {
 
         <div className="h-24 w-full flex bg-brand-navy shadow-lg">
           <div className="w-[24%] bg-logo-bg relative">
-            <div className="absolute top-0 right-0 h-full w-1.5 bg-brand-orange origin-top -skew-x-[15deg] translate-x-[10px]"></div>
+            <div className="absolute top-0 right-0 h-full w-1.5 bg-brand-orange origin-top skew-x-[15deg] "></div>
           </div>
           <div className="flex-1 bg-brand-navy"></div>
         </div>

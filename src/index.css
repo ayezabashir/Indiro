@@ -2,10 +2,14 @@
 
 
 
+
 @theme {
-  --color-brand-orange: #ff4c1c;
-  --color-brand-navy: #1b232e;
-  --color-logo-bg: #323d4a;
+  --color-brand-orange: #fe4c1c;
+  --color-brand-navy: #192436;
+  --color-brand-slate: #2d384a;
+  --color-text-white: #ffffff;
+  --color-text-muted: #9ca3af;
+  --transition-slow: 0.5s ease-in-out;
 }
 @font-face {
   font-family: 'Oswald';
@@ -26,6 +30,14 @@
   @apply absolute top-0 right-0 h-full w-[2px] bg-brand-orange;
   transform: skewX(-15deg);
   transform-origin: top;
+}
+
+.hero-pagination-track {
+  @apply relative w-[3px] h-32 bg-zinc-700/50 rounded-full overflow-hidden;
+}
+
+.hero-pagination-progress {
+  @apply w-full bg-zinc-300 transition-all duration-500 ease-out;
 }
 
 @keyframes side-to-side {
