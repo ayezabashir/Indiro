@@ -1,11 +1,13 @@
+import ContentInner1 from "../components/home/ContentInner1";
+import HeroContent from "../components/home/HeroContent";
+
 const Home = () => {
   return (
-    <div className="h-screen relative">
-      <h1 className="text-black">
-        hi
-      </h1>
-    </div>
-  )
-}
+    <>
+      <HeroContent />
+      <ContentInner1 />
+    </>
+  );
+};
 
-export default Home
+export default Home;
