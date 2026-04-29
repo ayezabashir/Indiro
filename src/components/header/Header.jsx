@@ -85,16 +85,7 @@ const Header = () => {
               </Link>
             </nav>
 
-            <div className="relative group mr-4">
-              <div className="absolute inset-0 border-2 border-white -translate-x-2 -translate-y-2 group-hover:translate-x-2 group-hover:translate-y-2 transition-all duration-300"></div>
-
-              <Link
-                to="/contact"
-                className="relative block bg-brand-orange text-white px-9 py-4 text-sm font-black tracking-widest border border-white transition-transform active:scale-95"
-              >
-                CONTACT US
-              </Link>
-            </div>
+            <ShiftingButton to="/contact" children="CONTACT US" />
           </div>
         </div>
       </div>
