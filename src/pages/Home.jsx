@@ -1,6 +1,10 @@
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className="h-screen relative">
+      <h1 className="text-black">
+        hi
+      </h1>
+    </div>
   )
 }
 

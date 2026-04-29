@@ -1,22 +1,25 @@
-import { Route, Routes } from "react-router-dom"
-import Home from "./pages/Home";
-import { About } from "./pages/About";
-import Secret from "./pages/Secret";
-import Blogs from "./pages/Blogs";
-import BlogDetails from "./pages/BlogDetails";
+import { lazy } from "react";
+import { Route, Routes } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
+
+const Home = lazy(() => import("./pages/Home"));
+const About = lazy(() => import("./pages/About"));
+const Secret = lazy(() => import("./pages/Secret"));
+const Blogs = lazy(() => import("./pages/Blogs"));
+const BlogDetails = lazy(() => import("./pages/BlogDetails"));
 
 const App = () => {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="secret" element={<Secret />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="blogs/:id" element={<BlogDetails />} />
-      </Routes>
-    </>
+      </Route>
+    </Routes>
   );
-}
+};
 
-export default App
+export default App;

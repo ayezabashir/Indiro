@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #ff4c1c;
+  --color-brand-navy: #1b232e;
+  --color-logo-bg: #323d4a;
+}
+
+.header-bg-split {
+  @apply absolute inset-0 flex;
+}
+
+.slant-divider {
+  @apply relative;
+}
+
+.slant-divider::after {
+  content: "";
+  @apply absolute top-0 right-0 h-full w-[2px] bg-brand-orange;
+  transform: skewX(-15deg);
+  transform-origin: top;
+}
+
+@keyframes side-to-side {
+
+  0%,
+  100% {
+    transform: translateX(-12px);
+    opacity: 0.3;
+  }
+
+  50% {
+    transform: translateX(12px);
+    opacity: 1;
+  }
+}
+
+.animate-side {
+  animation: side-to-side 1.5s ease-in-out infinite;
+}
