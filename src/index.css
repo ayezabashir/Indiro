@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
+<<<<<<< HEAD
 /* Semicolon add kiya yahan */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+=======
+>>>>>>> 3a4d5360dc9597b3d5141a8bc6d6441e4349c49a
 @theme {
   /* Poori body ke liye Roboto set karne ka tareeka */
   --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
@@ -23,6 +26,7 @@
   font-style: normal;
 }
 
+<<<<<<< HEAD
 /* Base layer mein body par default apply kar dena safe rehta hai */
 @layer base {
   body {
@@ -31,6 +35,8 @@
 }
 
 /* Aapki baaki classes */
+=======
+>>>>>>> 3a4d5360dc9597b3d5141a8bc6d6441e4349c49a
 .header-bg-split {
   @apply absolute inset-0 flex;
 }
