@@ -1,11 +1,18 @@
 @import "tailwindcss";
 
+
+
 @theme {
   --color-brand-orange: #ff4c1c;
   --color-brand-navy: #1b232e;
   --color-logo-bg: #323d4a;
 }
-
+@font-face {
+  font-family: 'Oswald';
+  src: url('../public/OswaldFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 .header-bg-split {
   @apply absolute inset-0 flex;
 }

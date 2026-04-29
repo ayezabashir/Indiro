@@ -60,25 +60,25 @@ const Header = () => {
           </div>
 
           <div className="flex items-center">
-            <nav className="flex items-center gap-10 mr-12 text-white text-[16px] font-bold uppercase tracking-widest">
+            <nav className="flex font-Oswald items-center gap-10 mr-12 text-white text-[16px] font-bold uppercase tracking-widest">
               <Link
                 to="/"
-                className="hover:text-brand-orange transition-colors"
+                className="hover:text-brand-orange font-[Oswald] transition-colors"
               >
                 Home
               </Link>
               <Link
                 to="/about"
-                className="hover:text-brand-orange transition-colors"
+                className="hover:text-brand-orange font-[Oswald] transition-colors"
               >
                 About
               </Link>
-              <div className="group relative flex items-center gap-1 cursor-pointer hover:text-brand-orange">
+              <div className="group relative flex font-[Oswald] items-center gap-1 cursor-pointer hover:text-brand-orange">
                 Pages <BiChevronDown size={22} />
               </div>
               <Link
                 to="/blogs"
-                className="hover:text-brand-orange transition-colors"
+                className="hover:text-brand-orange font-[Oswald] transition-colors"
               >
                 Blogs
               </Link>
@@ -89,7 +89,7 @@ const Header = () => {
 
               <Link
                 to="/contact"
-                className="relative block bg-brand-orange text-white px-9 py-4 text-sm font-black tracking-widest border border-white transition-transform active:scale-95"
+                className="relative block bg-brand-orange font-Oswald text-white px-9 py-4 text-sm font-black tracking-widest border border-white transition-transform active:scale-95"
               >
                 CONTACT US
               </Link>
