@@ -2,17 +2,18 @@ import { Suspense } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import Footer from "../components/Footer";
+import Loader from "./Loader";
 
 const MainLayout = () => {
   return (
     <>
-      <Header />
-      <main>
-        <Suspense fallback={<div className="loading">Loading page...</div>}>
+      <Suspense fallback={<Loader />}>
+        <Header />
+        <main>
           <Outlet />
-        </Suspense>
-      </main>
-      <Footer />
+        </main>
+        <Footer />
+      </Suspense>
     </>
   );
 };
