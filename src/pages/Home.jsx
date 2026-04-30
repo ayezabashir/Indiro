@@ -5,6 +5,7 @@ import ContentInner4 from "../components/home/ContentInner4";
 import ContentInner5 from "../components/home/ContentInner5";
 import ContentInner6 from "../components/home/ContentInner6";
 import HeroContent from "../components/home/HeroContent";
+import Plans from "../components/home/Plans";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <ContentInner4 />
       <ContentInner5 />
       <ContentInner6 />
+      <Plans />
     </>
   );
 };
