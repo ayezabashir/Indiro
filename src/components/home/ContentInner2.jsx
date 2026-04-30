@@ -44,6 +44,7 @@ const ContentInner2 = () => {
   return (
     <SplitLayout
       isAnimating={isAnimating}
+      containerClassName="lg:grid-cols-[3fr_2fr]"
       bgImage="/images/content2bgimg.jpg"
       leftContent={
         <>

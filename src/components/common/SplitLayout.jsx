@@ -9,7 +9,7 @@ const SplitLayout = ({
 }) => {
   return (
     <section
-      className={`relative min-h-screen grid grid-cols-1 lg:grid-cols-[3fr_2fr] bg-brand-navy overflow-hidden ${containerClassName}`}
+      className={`relative min-h-screen grid grid-cols-1 bg-brand-navy overflow-hidden ${containerClassName}`}
     >
       <div
         className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-1000"
@@ -20,7 +20,7 @@ const SplitLayout = ({
         }}
       ></div>
       <div
-        className={`flex flex-col justify-center px-8 lg:px-24 py-20 relative z-10 ${leftClassName}`}
+        className={`flex flex-col justify-center px-8 lg:px-16 py-20 relative z-10 ${leftClassName}`}
       >
         <div
           className={`transition-all duration-500 ease-out ${
