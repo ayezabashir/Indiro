@@ -5,6 +5,10 @@ import "swiper/css/free-mode";
 import { GiAtomicSlashes, GiRobotGrab } from "react-icons/gi";
 import { TbTruckDelivery } from "react-icons/tb";
 import { BsFuelPump } from "react-icons/bs";
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
 
 const services = [
   {
@@ -38,11 +42,39 @@ const services = [
     icon: <BsFuelPump />,
   },
 ];
-
+gsap.registerPlugin(ScrollTrigger);
 const ContentInner1 = () => {
+  const containerRef = useRef(null);
+  useGSAP(
+    () => { 
+      gsap.fromTo(
+        ".swiper-slide",
+        {
+          opacity: 0,
+          scale: 0.6,
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          duration: 0.8,
+          ease: "back.out(1.2)",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: ".swiper",
+            start: "top 80%",
+            toggleActions: "play reverse play reverse",
+          },
+        },
+      );
+    },
+    { scope: containerRef },
+  );
   const extendedServices = [...services, ...services];
   return (
-    <section className="py-24 bg-brand-navy relative overflow-hidden">
+    <section
+      ref={containerRef}
+      className="py-24 bg-brand-navy relative overflow-hidden"
+    >
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{ backgroundImage: "url('/images/dotted.png')" }}
@@ -68,7 +100,6 @@ const ContentInner1 = () => {
             felis enim interdum purus.
           </p>
         </div>
-
         <Swiper
           modules={[FreeMode, Pagination]}
           spaceBetween={30}

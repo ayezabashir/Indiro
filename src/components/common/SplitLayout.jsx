@@ -1,3 +1,10 @@
+import { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 const SplitLayout = ({
   bgImage,
   leftContent,
@@ -7,8 +14,43 @@ const SplitLayout = ({
   leftClassName = "",
   rightClassName = "",
 }) => {
+  const sectionRef = useRef(null);
+  const leftRef = useRef(null);
+  const rightRef = useRef(null);
+
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 85%",
+          end: "bottom 15%",
+          toggleActions: "play reverse play reverse",
+        },
+      });
+
+      tl.from(leftRef.current, {
+        x: -100,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.out",
+      }).from(
+        rightRef.current,
+        {
+          x: 100,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+        },
+        "-=0.7",
+      ); 
+    },
+    { scope: sectionRef },
+  );
+
   return (
     <section
+      ref={sectionRef}
       className={`relative min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-brand-navy overflow-hidden ${containerClassName}`}
     >
       <div className="absolute inset-0 z-0 pointer-events-none transition-opacity duration-1000">
@@ -20,7 +62,6 @@ const SplitLayout = ({
             backgroundPosition: "center",
           }}
         />
-
         <div
           className="absolute inset-0 hidden lg:block"
           style={{
@@ -32,6 +73,7 @@ const SplitLayout = ({
       </div>
 
       <div
+        ref={leftRef}
         className={`relative lg:static flex flex-col justify-center px-8 lg:px-16 py-20 z-10 ${leftClassName}`}
       >
         <div
@@ -44,7 +86,9 @@ const SplitLayout = ({
           {leftContent}
         </div>
       </div>
+
       <div
+        ref={rightRef}
         className={`relative lg:static h-auto flex flex-col justify-center z-10 ${rightClassName}`}
       >
         <div
