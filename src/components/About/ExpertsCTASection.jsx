@@ -42,12 +42,12 @@ export default function ExpertsCtaSection() {
           type="button"
           onClick={() => setOpen(true)}
           aria-label="Play video"
-          className="group relative inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full text-white shadow-2xl transition-transform hover:scale-105"
-          style={{ backgroundColor: ORANGE }}
+          className="group relative bg-[ORANGE] cursor-pointer hover:bg-white inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 rounded-full text-white shadow-2xl transition-transform hover:scale-105"
+     
         >
           {/* pulse rings */}
           <span
-            className="absolute inset-0 rounded-full animate-ping opacity-40"
+            className="absolute   inset-0 rounded-full animate-ping opacity-40"
             style={{ backgroundColor: ORANGE }}
             aria-hidden="true"
           />
@@ -56,7 +56,7 @@ export default function ExpertsCtaSection() {
             style={{ borderColor: ORANGE }}
             aria-hidden="true"
           />
-          <Play className="relative w-8 h-8 sm:w-10 sm:h-10 fill-white ml-1" />
+          <Play className="relative cursor-pointer w-8 h-8 sm:w-10 sm:h-10 fill-white ml-1 hover:fill-[ORANGE]" />
         </button>
       </div>
 

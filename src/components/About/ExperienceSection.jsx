@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, useLayoutEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { FaArrowRight } from "react-icons/fa";
+import ShiftingButton from "../common/ShiftingButton";
 
 const SERVICES = [
   {
@@ -174,12 +175,7 @@ export default function ExperienceSection() {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud co.
             </p>
-            <div className="relative inline-block group cursor-pointer">
-              <div className="absolute inset-0 border-2 border-white -translate-x-2 -translate-y-2 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2 z-0" />
-              <button className="relative z-10 px-10 py-4 bg-[#ff5e14] text-white font-[Oswald] font-bold uppercase tracking-widest text-sm active:scale-95 transition-transform">
-                About Us
-              </button>
-            </div>
+       <ShiftingButton to='/about'>About Us</ShiftingButton>
           </div>
         </div>
 

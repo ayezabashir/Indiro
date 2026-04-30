@@ -4,19 +4,14 @@ import ExpertsCtaSection from '../components/About/ExpertsCTASection'
 import StatsSection from '../components/About/StatsSection'
 import LogoNewsletterSection from '../components/About/LogoNewsLetter'
 import TeamSection from '../components/About/TeamSection'
+import BannerSection from '../components/common/BannerSection'
 
 const About = () => {
   return (
     <div className="w-full">
-    <div className="relative w-full h-[50vh] top-[20vh] bg-[url('../images/aboutbanner.jpg')] bg-cover bg-center flex items-center justify-center">
+   <BannerSection title="About" />
 
-  <div className="absolute inset-0 bg-black/50"></div>
-
-        <h1 className='text-[60px] font-bold text-center font-[Oswald] text-white  z-20'>About</h1>
-
-      </div>
-
-      <div className='relative top-[20vh]'>
+      <div className=''>
        <ExperienceSection />
        <ExpertsCtaSection />
        <StatsSection />
