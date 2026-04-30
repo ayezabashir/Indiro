@@ -28,6 +28,7 @@
 @layer base {
   body {
     @apply font-sans;
+    background-color: #0D1726
   }
 }
 

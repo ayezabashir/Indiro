@@ -12,9 +12,6 @@ import { Link } from "react-router-dom";
 import logoimg from "/images/logo-white.png";
 import ShiftingButton from "../common/ShiftingButton";
 
-/* ═══════════════════════════════════════════════════════════
-   Header
-═══════════════════════════════════════════════════════════ */
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -97,10 +94,10 @@ const Header = () => {
           </div>
 
           {/* ── NAV BAR ── */}
-          <div className="h-16 md:h-24 flex items-center container mx-auto px-4 gap-30">
+          <div className="h-16 md:h-24 flex  items-center container mx-auto px-4 gap-30">
 
             {/* Logo */}
-            <div className="w-auto md:w-[20%] flex items-center flex-1 md:flex-none">
+            <div className="w-auto md:w-[20%]  flex items-center flex-1 md:flex-none">
               <Link to="/" onClick={closeDrawer}>
                 <img src={logoimg} alt="Indiro" className="w-32 md:w-48" />
               </Link>

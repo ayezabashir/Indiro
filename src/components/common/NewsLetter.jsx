@@ -2,8 +2,8 @@ import React from 'react'
 import { Mail, MailOpenIcon } from 'lucide-react';
 const NewsLetter = () => {
   return (
-      <div className="p-11 absolute w-full b-30 -bottom-30 mx-auto">
-        <div className="bg-[#FE4C1C] p-10 flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div className="p-11 absolute  w-full b-30 -bottom-35 mx-auto">
+        <div className="bg-[#FE4C1C] p-10 flex flex-col lg:flex-row items-center justify-between h-50 gap-8">
 
           {/* Heading row */}
           <div className="flex  items-center gap-6 w-full lg:w-auto">
