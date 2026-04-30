@@ -1,3 +1,4 @@
+import NewsLetter from "../components/common/NewsLetter";
 import ContentContact from "../components/home/ContentContact";
 import ContentInner1 from "../components/home/ContentInner1";
 import ContentInner2 from "../components/home/ContentInner2";
@@ -20,6 +21,11 @@ const Home = () => {
       <ContentInner6 />
       <Plans />
       <ContentContact />
+      <div className="relative z-20 -mb-32 bg-brand-navy">
+        <div className="container mx-auto px-6">
+          <NewsLetter />
+        </div>
+      </div>
     </>
   );
 };
