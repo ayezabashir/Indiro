@@ -4,7 +4,7 @@ import content3pic from "/images/content3pic.jpg";
 const ContentInner3 = () => {
   return (
     <section className="relative bg-brand-navy py-24 overflow-hidden">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="relative group">
             <div className="relative z-10 overflow-hidden border-4 border-white/10">

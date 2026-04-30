@@ -49,7 +49,7 @@ const ContentInner4 = () => {
       bgImage="/images/content4bgimg.jpg"
       containerClassName="lg:grid-cols-[5fr_4fr] py-20"
       isAnimating={isAnimating}
-      rightClassName="border-t-0 flex flex-col gap-4 pl-4 lg:pl-0 pr-4 lg:pr-8"
+      rightClassName="border-t-0 flex flex-col gap-4 pl-8 lg:pl-0 pr-8"
       leftContent={
         <div className="max-w-2xl">
           <div className="flex items-center gap-3 mb-4">

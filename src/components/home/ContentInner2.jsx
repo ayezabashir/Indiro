@@ -46,6 +46,7 @@ const ContentInner2 = () => {
       isAnimating={isAnimating}
       containerClassName="lg:grid-cols-[3fr_2fr]"
       bgImage="/images/content2bgimg.jpg"
+      rightClassName="p-8 lg:p-0"
       leftContent={
         <>
           <h2 className="text-white text-2xl md:text-3xl font-bold leading-[1.1] mb-8 uppercase">
