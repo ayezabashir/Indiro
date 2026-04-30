@@ -1,3 +1,4 @@
+import ContentContact from "../components/home/ContentContact";
 import ContentInner1 from "../components/home/ContentInner1";
 import ContentInner2 from "../components/home/ContentInner2";
 import ContentInner3 from "../components/home/ContentInner3";
@@ -18,6 +19,7 @@ const Home = () => {
       <ContentInner5 />
       <ContentInner6 />
       <Plans />
+      <ContentContact />
     </>
   );
 };

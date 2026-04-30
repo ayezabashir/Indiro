@@ -81,7 +81,18 @@ const Plans = () => {
   );
 
   return (
-    <section ref={containerRef} className="py-24 bg-brand-navy overflow-hidden">
+    <section
+      ref={containerRef}
+      className="relative py-24 bg-black overflow-hidden"
+    >
+      <div
+        className="absolute inset-0 z-0 opacity-20 pointer-events-none "
+        style={{
+          backgroundImage: "url('/images/bg19.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      ></div>
       <div className="container mx-auto px-6">
         <div className="plans-header text-center mb-16">
           <div className="flex items-center justify-center gap-3 mb-4">
