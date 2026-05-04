@@ -59,7 +59,7 @@ const ContentInner4 = () => {
             <span className="h-0.5 w-10 bg-brand-orange"></span>
           </div>
 
-          <h2 className="text-white text-2xl md:text-3xl font-bold mb-10 leading-tight uppercase">
+          <h2 className="text-white text-2xl md:text-[44.8px] font-bold mb-10 leading-tight uppercase">
             Industries Provide <br /> Best Services
           </h2>
 
@@ -68,7 +68,7 @@ const ContentInner4 = () => {
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`flex-1 px-6 py-4 text-sm font-bold uppercase tracking-tighter transition-all duration-300 ${
+                className={`flex-1 px-6 py-4 font-[Oswald] text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                   activeTab === tab.id
                     ? "bg-brand-orange text-white"
                     : "text-zinc-400 hover:text-white bg-transparent"
@@ -83,25 +83,25 @@ const ContentInner4 = () => {
             {currentContent.description}
           </p>
 
-          <div className="flex gap-12 mb-12">
-            <div className="flex items-start gap-4">
+          <div className="flex  gap-12 mb-12">
+            <div className="flex items-start font-[Oswald] gap-4">
               <span className="text-white text-5xl font-bold transition-all duration-300">
                 {currentContent.users}
               </span>
-              <div className="text-zinc-400 text-sm leading-tight uppercase font-bold mt-1">
-                Thousands of <br /> users
-                <p className="text-[10px] font-normal lowercase opacity-60">
+              <div className="text-white text-[20px] font-[Oswald] text-sm leading-tight uppercase  whitespace-nowrap font-bold mt-1">
+                Thousands of users
+                <p className="text-[14px] font-normal lowercase opacity-60">
                   Integer dui metus, venenatis
                 </p>
               </div>
             </div>
-            <div className="flex items-start gap-4">
+            <div className="flex  w-[50%]   items-start gap-2 flex-nowrap shrink-0">
               <span className="text-white text-5xl font-bold transition-all duration-300">
                 {currentContent.brands}
               </span>
-              <div className="text-zinc-400 text-sm leading-tight uppercase font-bold mt-1">
-                Brands <br /> collection
-                <p className="text-[10px] font-normal lowercase opacity-60">
+              <div className="text-white text-[20px] font-[Oswald]  uppercase font-bold mt-1">
+                Brands  collection
+                <p className="text-[14px] font-normal lowercase opacity-60">
                   Pellentesque et nisl quis
                 </p>
               </div>

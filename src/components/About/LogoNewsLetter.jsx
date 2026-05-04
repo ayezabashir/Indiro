@@ -22,7 +22,7 @@ const LogoItem = ({ logo }) => {
 
   return (
     <div
-      className="relative overflow-hidden h-24 min-w-[200px] cursor-pointer"
+      className="relative overflow-hidden py-8 h-24 min-w-[200px] cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
@@ -162,7 +162,7 @@ function MobileMarquee() {
 
       {/* clipping viewport */}
       <div
-        className="overflow-hidden w-full"
+        className="overflow-hidden  w-full"
         onMouseEnter={() => { isPaused.current = true;  setPaused(true); }}
         onMouseLeave={() => { isPaused.current = false; setPaused(false); }}
       >
@@ -212,7 +212,7 @@ function MobileMarquee() {
 /* ─────────────────── main export ─────────────────── */
 export default function LogoSection() {
   return (
-    <section className="w-full relative bg-[#131C27] py-16">
+    <section className="w-full relative bg-[#131C27] py-20">
       <div className="max-w-7xl mx-auto px-11">
 
         {/* ── Desktop logo grid (hidden on mobile) ── */}
