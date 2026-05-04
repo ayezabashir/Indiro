@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { BiChevronDown, BiPhone } from "react-icons/bi";
 import { BsEnvelope } from "react-icons/bs";
 import {
@@ -27,7 +27,9 @@ const Header = () => {
   /* ── lock body scroll when drawer open ── */
   useEffect(() => {
     document.body.style.overflow = drawerOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [drawerOpen]);
 
   const closeDrawer = () => {
@@ -46,24 +48,42 @@ const Header = () => {
     <>
       {/* ════════════════ HEADER ════════════════ */}
       <header
-        className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${isSticky ? "-translate-y-12" : "translate-y-0"
-          }`}
+        className={`fixed top-0 left-0 w-full z-[999] transition-all duration-300 ${
+          isSticky ? "-translate-y-12" : "translate-y-0"
+        }`}
       >
         {/* ── decorative background strips (desktop only) ── */}
         <div className="absolute inset-0 w-full h-full flex flex-col pointer-events-none">
-          {/* top bar strip */}
-          <div className="h-12 w-full hidden md:flex">
+          <div className="h-12 w-full hidden md:flex items-stretch">
             <div
-              className="w-[24%] bg-brand-navy"
-              style={{ clipPath: "polygon(0px 0px, 92% 0, 98% 100%, 0% 100%)" }}
+              className="w-[24%] bg-[#1a2434]"
+              style={{
+                clipPath: "polygon(0 0, 87% 0, 100% 100%, 0% 100%)",
+              }}
             />
-            <div className="flex-1 bg-brand-orange" />
+
+            <div
+              className="flex-1 bg-brand-orange"
+              style={{
+                clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 4% 100%)",
+                marginLeft: "-23px"
+              }}
+            />
           </div>
 
-          {/* nav bar strip */}
           <div className="h-24 w-full flex bg-brand-navy shadow-lg">
-            <div className="w-[24%] bg-logo-bg relative hidden md:block">
-              <div className="absolute top-0 right-0 h-full w-1.5 bg-brand-orange origin-top skew-x-15" />
+            <div
+              className="w-[28%] bg-brand-navy relative hidden md:block"
+              style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0% 100%)" }}
+            >
+              {/* The thin orange diagonal border */}
+              <div
+                className="absolute top-0 right-0 h-full w-[4px] bg-brand-orange"
+                style={{
+                  clipPath: "polygon(85% 0, 100% 0, 100% 100%, 85% 100%)",
+                  transform: "translateX(-15px)",
+                }}
+              />
             </div>
             <div className="flex-1 bg-brand-navy" />
           </div>
@@ -74,17 +94,19 @@ const Header = () => {
 
         {/* ── CONTENT layer ── */}
         <div className="relative z-10 w-full">
-
           {/* ── DESKTOP TOP BAR ── */}
           <div
-            className={`h-12 hidden md:flex items-center justify-end container mx-auto px-4 transition-opacity duration-300 ${isSticky ? "opacity-0" : "opacity-100"
-              }`}
+            className={`h-12 hidden md:flex items-center justify-end container mx-auto px-4 transition-opacity duration-300 ${
+              isSticky ? "opacity-0" : "opacity-100"
+            }`}
           >
-            <div className="flex items-center gap-8 md:gap-15 text-white text-sm font-bold uppercase tracking-wide">
-              <p className="hidden md:block">Mon 8am - 7pm - Sunday 10am - 4pm</p>
+            <div className="flex items-center gap-8 md:gap-15 text-white text-[13px] font-bold uppercase tracking-wide">
+              <p className="hidden md:block">
+                Mon 8am - 7pm - Sunday 10am - 4pm
+              </p>
               <div className="flex items-center gap-6">
                 <span className="flex items-center gap-2">
-                  <BiPhone size={18} /> (123) 456-7891
+                  <BiPhone size={18} /> Phone line: (123) 456-7891
                 </span>
                 <span className="flex items-center gap-2">
                   <BsEnvelope size={18} /> info@example.com
@@ -94,10 +116,9 @@ const Header = () => {
           </div>
 
           {/* ── NAV BAR ── */}
-          <div className="h-16 md:h-24 flex  items-center container mx-auto px-4 gap-30">
-
+          <div className="h-16 md:h-24 flex items-center container mx-auto gap-30">
             {/* Logo */}
-            <div className="w-auto md:w-[20%]  flex items-center flex-1 md:flex-none">
+            <div className="w-auto md:w-[20%] pl-4 flex items-center flex-1 md:flex-none">
               <Link to="/" onClick={closeDrawer}>
                 <img src={logoimg} alt="Indiro" className="w-32 md:w-48" />
               </Link>
@@ -105,11 +126,17 @@ const Header = () => {
 
             {/* ── DESKTOP NAV ── */}
             <div className="hidden md:flex items-center justify-between w-[70%]">
-              <nav className="flex font-Oswald items-center gap-10 mr-12 text-white text-[16px] font-bold uppercase tracking-widest">
-                <Link to="/" className="hover:text-brand-orange font-[Oswald] transition-colors">
+              <nav className="flex font-Oswald items-center gap-10 mr-12 px-4 text-white text-[16px] font-bold uppercase tracking-widest">
+                <Link
+                  to="/"
+                  className="hover:text-brand-orange font-[Oswald] transition-colors"
+                >
                   Home
                 </Link>
-                <Link to="/about" className="hover:text-brand-orange font-[Oswald] transition-colors">
+                <Link
+                  to="/about"
+                  className="hover:text-brand-orange font-[Oswald] transition-colors"
+                >
                   About
                 </Link>
 
@@ -138,12 +165,19 @@ const Header = () => {
                   </div>
                 </div>
 
-                <Link to="/blogs" className="hover:text-brand-orange font-[Oswald] transition-colors">
+                <Link
+                  to="/blogs"
+                  className="hover:text-brand-orange font-[Oswald] transition-colors"
+                >
                   Blogs
                 </Link>
               </nav>
 
-              <ShiftingButton to="/contact" children="CONTACT US" />
+              <ShiftingButton
+                to="/contact"
+                children="CONTACT US"
+                className="pr-2"
+              />
             </div>
 
             {/* ── HAMBURGER (mobile only) ── */}
@@ -154,66 +188,71 @@ const Header = () => {
               style={{ position: "relative" }}
             >
               {drawerOpen ? (
-                /* ✕ icon */
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                >
                   <line x1="3" y1="3" x2="17" y2="17" />
                   <line x1="17" y1="3" x2="3" y2="17" />
                 </svg>
               ) : (
-                /* ☰ icon */
-                <svg width="22" height="16" viewBox="0 0 22 16" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round">
+                <svg
+                  width="22"
+                  height="16"
+                  viewBox="0 0 22 16"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                >
                   <line x1="0" y1="2" x2="22" y2="2" />
                   <line x1="0" y1="8" x2="22" y2="8" />
                   <line x1="0" y1="14" x2="22" y2="14" />
                 </svg>
               )}
             </button>
-
-          </div>{/* end nav bar */}
-        </div>{/* end content layer */}
+          </div>
+        </div>
       </header>
 
-      {/* ════════════════ MOBILE DRAWER ════════════════ */}
-
-      {/* Dark overlay */}
+      {/* ════════════════ MOBILE DRAWER (Restored) ════════════════ */}
       <div
         onClick={closeDrawer}
-        className={`fixed inset-0 bg-black/60 z-[1000] md:hidden transition-opacity duration-300 ${drawerOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
+        className={`fixed inset-0 bg-black/60 z-[1000] md:hidden transition-opacity duration-300 ${
+          drawerOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        }`}
       />
 
-      {/* Slide-in panel */}
       <div
         className={`fixed top-0 left-0 h-full w-[75%] max-w-[320px] bg-[#0e1828] z-[1001] md:hidden
           flex flex-col transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]
           ${drawerOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        {/* Logo inside drawer */}
         <div className="px-7 pt-8 pb-6">
           <Link to="/" onClick={closeDrawer}>
             <img src={logoimg} alt="Indiro" className="w-36" />
           </Link>
         </div>
 
-        {/* Nav links */}
         <nav className="flex flex-col flex-1 px-0">
-
           {navLinks.map((link) => (
             <Link
               key={link.to}
               to={link.to}
               onClick={closeDrawer}
-              className="
-                px-7 py-4 text-white font-[Oswald] font-bold uppercase tracking-widest text-[17px]
-                border-b border-white/10
-                hover:text-brand-orange transition-colors duration-200
-              "
+              className="px-7 py-4 text-white font-[Oswald] font-bold uppercase tracking-widest text-[17px] border-b border-white/10 hover:text-brand-orange transition-colors duration-200"
             >
               {link.label}
             </Link>
           ))}
 
-          {/* Pages — accordion */}
           <div className="border-b border-white/10">
             <button
               onClick={() => setPagesExpanded((v) => !v)}
@@ -222,13 +261,14 @@ const Header = () => {
               <span>Pages</span>
               <span
                 className="w-9 h-9 bg-brand-orange flex items-center justify-center flex-shrink-0 transition-transform duration-300"
-                style={{ transform: pagesExpanded ? "rotate(90deg)" : "rotate(0deg)" }}
+                style={{
+                  transform: pagesExpanded ? "rotate(90deg)" : "rotate(0deg)",
+                }}
               >
                 <FaChevronRight size={13} color="white" />
               </span>
             </button>
 
-            {/* Sub-links */}
             <div
               style={{
                 maxHeight: pagesExpanded ? "200px" : "0",
@@ -254,10 +294,8 @@ const Header = () => {
               </div>
             </div>
           </div>
-
         </nav>
 
-        {/* Social icons at bottom */}
         <div className="px-7 py-8 flex items-center gap-4">
           {[
             { icon: <FaFacebookF size={15} />, href: "#" },
@@ -274,8 +312,7 @@ const Header = () => {
             </a>
           ))}
         </div>
-
-      </div>{/* end drawer */}
+      </div>
     </>
   );
 };

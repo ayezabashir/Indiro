@@ -18,7 +18,7 @@ const HeroContent = () => {
   ];
 
   return (
-    <section className="relative pt-20 h-screen w-full bg-brand-navy overflow-hidden">
+    <section className="relative h-screen w-full bg-brand-navy overflow-hidden">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation={{
