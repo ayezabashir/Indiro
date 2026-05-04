@@ -66,7 +66,28 @@ const ContentContact = () => {
     },
     { scope: sectionRef },
   );
+const containerRef = useRef(null);
+  // Hover state track karne ke liye (null matlab koi hover nahi hai)
+  const [hoveredIdx, setHoveredIdx] = useState(null);
 
+  useGSAP(() => {
+    gsap.fromTo(
+      ".animate-info-card",
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        stagger: 0.2, // Aik aik kar ke aane ke liye
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top 85%",
+          scrub:true
+        },
+      }
+    );
+  }, { scope: containerRef });
   return (
     <section
       ref={sectionRef}
@@ -122,26 +143,41 @@ const ContentContact = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {infoCards.map((card, idx) => (
-            <div
-              key={idx}
-              className="animate-info-card group flex items-center gap-6 p-10 bg-[#1a2332] hover:bg-brand-orange transition-all duration-500 cursor-default"
-            >
-              <div className=" text-white transition-colors">
-                <FaRegCheckCircle size={30} />
-              </div>
-              <div className="flex flex-col">
-                <h4 className="text-white font-black text-xl leading-tight mb-1">
-                  {card.title}
-                </h4>
-                <span className="text-zinc-500 group-hover:text-white/80 text-sm uppercase font-bold tracking-wider transition-colors">
-                  {card.desc}
-                </span>
-              </div>
+       <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {infoCards.map((card, idx) => {
+        // Logic: 
+        // 1. Agar koi card hovered hai (hoveredIdx !== null), toh check karo ye wahi card hai ya nahi.
+        // 2. Agar koi card hovered nahi hai, toh sirf index 1 (center) ko orange rakho.
+        const isOrange = hoveredIdx !== null 
+          ? hoveredIdx === idx 
+          : idx === 1;
+
+        return (
+          <div
+            key={idx}
+            onMouseEnter={() => setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
+            className={`animate-info-card group flex items-center gap-6 p-10 transition-all duration-500 cursor-default
+              ${isOrange ? "bg-brand-orange" : "bg-[#1a2332]"}
+            `}
+          >
+            <div className="text-white transition-colors">
+              <FaRegCheckCircle size={30} />
             </div>
-          ))}
-        </div>
+            <div className="flex flex-col">
+              <h4 className="text-white font-black text-[24px] leading-tight mb-1">
+                {card.title}
+              </h4>
+              <span className={`text-sm uppercase font-bold tracking-wider transition-colors
+                ${isOrange ? "text-white/80" : "text-zinc-500"}
+              `}>
+                {card.desc}
+              </span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
       </div>
 
       <VideoModal

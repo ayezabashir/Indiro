@@ -25,10 +25,10 @@ const PricingCard = ({ image, category, title, features, price, decimal }) => {
           {features.map((feature, index) => (
             <li
               key={index}
-              className="flex items-center gap-3 text-zinc-400 group-hover:text-zinc-200 transition-colors"
+              className="flex items-center font-[Oswald]  gap-3 text-zinc-400 group-hover:text-[#666E82] transition-colors"
             >
               <FaCheck className="text-white text-sm" />
-              <span className="text-sm font-medium uppercase tracking-wider">
+              <span className="text-sm font-medium text-[20px] uppercase ">
                 {feature}
               </span>
             </li>

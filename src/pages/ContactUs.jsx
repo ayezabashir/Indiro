@@ -12,9 +12,9 @@ const ContactUs = () => {
           </h1>
         </div>
       </div>
-      <section className="pb-40">
+      <section >
         <MapSection />
-        <div className="z-100">
+        <div className="z-100 relative bottom-50">
           <MapFormSection />
         </div>
       </section>

@@ -1,12 +1,13 @@
 import React, { useState } from 'react'; // useState import kiya
 import { Calendar, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const RecentPostCard = ({ 
   image, 
   date, 
   author, 
   title, 
-  description 
+  description ,id
 }) => {
   // Image error handle karne ke liye state
   const [imgError, setImgError] = useState(false);
@@ -20,11 +21,11 @@ const RecentPostCard = ({
           <img 
             src={image} 
             alt={title} 
-            onError={() => setImgError(true)} // Agar load na ho toh state change kar do
+            onError={() => setImgError(true)}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
         ) : (
-          /* Image load na hone par Placeholder (image_017d5b.png ke mutabiq) */
+        
           <div className="flex flex-col items-center justify-center p-4">
             <span className="text-[#9ca3af]  text-2xl md:text-3xl  text-center leading-tight opacity-60">
               No preview <br /> available
@@ -49,9 +50,13 @@ const RecentPostCard = ({
         </div>
 
         {/* Title */}
-        <h3 className="text-white font-[Oswald] text-xl md:text-[28px] font-bold leading-snug uppercase mb-4 group-hover:text-[#fe4c1c] transition-colors">
+        <Link to={`/blog-details/${id}`}>
+           <h3 className="text-white font-[Oswald] text-xl md:text-[28px] font-bold leading-snug uppercase mb-4 group-hover:text-[#fe4c1c] transition-colors">
           {title}
         </h3>
+    
+        </Link>
+       
 
         {/* Description/Excerpt */}
         <p className="text-[#9ca3af] text-sm md:text-base font-sans line-clamp-2 leading-relaxed opacity-80">

@@ -9,7 +9,7 @@ const CategoryItem = ({ label, subCategories, active }) => {
           size={10} 
           className={`fill-[#fe4c1c] text-[#fe4c1c] group-hover:scale-125 transition-transform`} 
         />
-        <span className={` uppercase text-lg transition-colors ${active ? 'text-[#fe4c1c]' : 'text-zinc-400 group-hover:text-white'}`}>
+        <span className={` uppercase text-[16px] transition-colors ${active ? 'text-[#fe4c1c]' : 'text-zinc-400 group-hover:text-white'}`}>
           {label}
         </span>
       </div>

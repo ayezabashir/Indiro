@@ -5,11 +5,11 @@ import ContactForm from "./ContactForm";
 const MapFormSection = () => {
   return (
     <div className="container mx-auto ">
-      <div className="grid grid-cols-1 md:grid-cols-5 shadow-2xl rounded-lg overflow-hidden">
-        <div className="relative md:col-span-2 bg-[url('/images/content2pic2.jpg')] bg-cover bg-center text-white p-10 lg:p-16 flex flex-col justify-center min-h-[400px]">
+      <div className="flex flex-col lg:flex-row shadow-2xl rounded-lg overflow-hidden items-end ">
+        <div className="relative w-[100%] lg:w-[40%] md:col-span-2 bg-[url('/images/content2pic2.jpg')] bg-cover bg-center text-white p-10 lg:p-16 flex flex-col justify-center h-[600px]">
           <div className="absolute inset-0 bg-black/60 z-0"></div>
 
-          <div className="relative z-10">
+          <div className="relative  z-10">
             <h2 className="text-5xl font-[Oswald] font-extrabold mb-5 relative inline-block">
               Get In Touch
               <span className="absolute left-[-15px] top-1/2 -translate-y-1/2 h-[70%] w-1 bg-brand-orange"></span>
@@ -50,7 +50,8 @@ const MapFormSection = () => {
             </div>
           </div>
         </div>
-        <div className="relative md:col-span-3 max-w-2xl bg-brand-navy text-white p-10 lg:p-16 flex flex-col justify-center">
+        <div className="relative w-[100%] lg:w-[50%] md:col-span-3 
+         h-[760px] bg-brand-navy  text-white p-10 lg:p-16 flex flex-col justify-center">
           <div className="flex items-center gap-2 mb-2">
             <div className="h-[2px] w-8 bg-brand-orange"></div>
             <p className="text-brand-orange font-semibold tracking-wider text-sm">

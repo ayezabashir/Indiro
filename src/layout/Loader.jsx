@@ -15,7 +15,7 @@ const Loader = () => {
           style={{ animationDelay: "0.4s" }}
         ></div>
       </div>
-      <h2 className="text-xs font-light tracking-[0.3em] uppercase text-white">
+      <h2 className="text-[20px] font-light  uppercase text-white">
         Loading...
       </h2>
       <div className="flex gap-4 mt-6">
