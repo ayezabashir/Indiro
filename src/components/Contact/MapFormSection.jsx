@@ -10,37 +10,37 @@ const MapFormSection = () => {
           <div className="absolute inset-0 bg-black/60 z-0"></div>
 
           <div className="relative z-10">
-            <h2 className="text-5xl font-extrabold mb-5 relative inline-block">
+            <h2 className="text-5xl font-[Oswald] font-extrabold mb-5 relative inline-block">
               Get In Touch
               <span className="absolute left-[-15px] top-1/2 -translate-y-1/2 h-[70%] w-1 bg-brand-orange"></span>
             </h2>
-            <p className="text-gray-200 mb-12 max-w-md">
+            <p className="text-gray-200 mb-12 max-w-md text-sm lg:text-lg">
               If you are interested in working with us, please get in touch.
             </p>
 
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <MapPinIcon className="text-xl shrink-0 mt-1" />
+                <MapPinIcon className="text-2xl shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-1">
+                  <h4 className="text-2xl font-bold text-white mb-1">
                     Our Address
                   </h4>
-                  <p className="text-gray-200 leading-relaxed text-sm lg:text-base">
+                  <p className="text-gray-200 leading-relaxed text-sm lg:text-lg">
                     Kalpana Chawla Circle, 23, near Mokshita Dairy, Sector B,
                     Rama Krishna Puram, Kota, Rajasthan 324009
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <BsEnvelope className="text-xl shrink-0 mt-1" />
+                <BsEnvelope className="text-2xl shrink-0 mt-1" />
                 <div>
-                  <h4 className="text-xl font-bold text-white mb-1">
+                  <h4 className="text-2xl font-bold text-white mb-1">
                     Our Email
                   </h4>
                   <p className="text-gray-200">
                     <a
                       href="mailto:info@example.com"
-                      className="hover:text-brand-orange transition"
+                      className="hover:text-brand-orange transition text-sm lg:text-lg"
                     >
                       info@example.com
                     </a>
@@ -58,7 +58,7 @@ const MapFormSection = () => {
             </p>
           </div>
 
-          <h3 className="text-4xl font-extrabold mb-10 text-white">
+          <h3 className="text-4xl font-[Oswald] font-extrabold mb-10 text-white">
             Get In Touch With Us
           </h3>
 
