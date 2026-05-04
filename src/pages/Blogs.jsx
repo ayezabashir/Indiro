@@ -44,6 +44,7 @@ const Blogs = () => {
               date={post.date}
               author={post.author}
               title={post.title}
+              id={post.id}
               description={post.description}
             />
           ))}
