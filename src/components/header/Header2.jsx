@@ -156,7 +156,7 @@ const Header2 = () => {
                     <Link to="/secret" onClick={closeDrawer} className="text-white/80 font-Oswald uppercase flex items-center gap-2 hover:text-brand-orange">
                        <FaChevronRight size={10} className="text-brand-orange"/> Secret
                     </Link>
-                    <Link to="/blog-details" onClick={closeDrawer} className="text-white/80 font-Oswald uppercase flex items-center gap-2 hover:text-brand-orange">
+                    <Link to="/blog-details/1" onClick={closeDrawer} className="text-white/80 font-Oswald uppercase flex items-center gap-2 hover:text-brand-orange">
                        <FaChevronRight size={10} className="text-brand-orange"/> Blog Detail
                     </Link>
                   </div>
