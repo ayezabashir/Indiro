@@ -56,7 +56,7 @@ const Header = () => {
         <div className="absolute inset-0 w-full h-full flex flex-col pointer-events-none">
           <div className="h-12 w-full hidden md:flex items-stretch">
             <div
-              className="w-[24%] bg-[#1a2434]"
+              className="w-[24%] bg-brand-slate"
               style={{
                 clipPath: "polygon(0 0, 87% 0, 100% 100%, 0% 100%)",
               }}
@@ -66,25 +66,25 @@ const Header = () => {
               className="flex-1 bg-brand-orange"
               style={{
                 clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 4% 100%)",
-                marginLeft: "-23px"
+                marginLeft: "-23px",
               }}
             />
           </div>
 
           <div className="h-24 w-full flex bg-brand-navy shadow-lg">
             <div
-              className="w-[28%] bg-brand-navy relative hidden md:block"
-              style={{ clipPath: "polygon(0 0, 85% 0, 100% 100%, 0% 100%)" }}
-            >
-              {/* The thin orange diagonal border */}
-              <div
-                className="absolute top-0 right-0 h-full w-[4px] bg-brand-orange"
-                style={{
-                  clipPath: "polygon(85% 0, 100% 0, 100% 100%, 85% 100%)",
-                  transform: "translateX(-15px)",
-                }}
-              />
-            </div>
+              className="w-[320px] bg-brand-slate relative hidden md:block"
+              style={{
+                clipPath:
+                  "polygon(-100% 100%, 109px -188px, 314px 96px, 309px 100px)",
+              }}
+            ></div>
+            <div
+              className="w-[20px] -translate-x-30 bg-brand-orange relative hidden md:block"
+              style={{
+                clipPath: "polygon(22px 0, 50px 0, 100px 100px, 93px 100px)",
+              }}
+            ></div>
             <div className="flex-1 bg-brand-navy" />
           </div>
         </div>
