@@ -1,7 +1,7 @@
-import { lazy, Suspense } from "react";
+import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import MainLayout from "./layout/MainLayout";
-import Loader from "./layout/Loader";
+import ContactUs from "./pages/ContactUs";
 
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
@@ -16,6 +16,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/secret" element={<Secret />} />
+        <Route path="/contact" element={<ContactUs />} />
         <Route path="/blogs" element={<Blogs />} />
     <Route path="/blog-details/:id" element={<BlogDetails />} />
       </Route>
