@@ -6,7 +6,7 @@ const BannerSection = ({title}) => {
 
   <div className="absolute inset-0 bg-black/50"></div>
 
-        <h1 className='text-[60px] font-bold text-center font-[Oswald] text-white  relative top-[10vh] z-20'>{title}</h1>
+        <h1 className='lg:text-[60px]  text-4xl font-bold text-center font-[Oswald] text-white  relative top-[10vh] z-20'>{title}</h1>
 
       </div>
   )

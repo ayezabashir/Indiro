@@ -125,7 +125,7 @@ const Header2 = () => {
         </div>
       </header>
 
-      {/* ════════════════ MOBILE DRAWER (Exact Image Style) ════════════════ */}
+      {/* ════════════════ MOBILE DRAWER ════════════════ */}
       <div 
         className={`fixed inset-0 bg-black/70 z-[10000] md:hidden transition-opacity duration-300 ${drawerOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`} 
         onClick={closeDrawer} 
@@ -136,8 +136,8 @@ const Header2 = () => {
            <img src={logoimg} alt="Logo" className="w-36 mb-12" />
            
            <nav className="flex flex-col">
-              <Link to="/" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/5">Home</Link>
-              <Link to="/about" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/5">About</Link>
+              <Link to="/" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/20">Home</Link>
+              <Link to="/about" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/25">About</Link>
               
               {/* Pages Accordion */}
               <div className="border-b border-white/5">
@@ -146,7 +146,7 @@ const Header2 = () => {
                   className={`w-full flex items-center justify-between py-4 text-white font-Oswald text-lg font-bold uppercase transition-colors ${pagesExpanded ? 'text-brand-orange' : ''}`}
                 >
                   Pages 
-                  <div className={`p-2 bg-white/5 transition-transform ${pagesExpanded ? 'rotate-180' : ''}`}>
+                  <div className={`p-2 bg-white/25 transition-transform ${pagesExpanded ? 'rotate-180' : ''}`}>
                     <FaChevronDown size={14} />
                   </div>
                 </button>
@@ -163,7 +163,7 @@ const Header2 = () => {
                 </div>
               </div>
 
-              <Link to="/blogs" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/5">Blogs</Link>
+              <Link to="/blogs" onClick={closeDrawer} className="text-white font-Oswald text-lg font-bold uppercase py-4 border-b border-white/25">Blogs</Link>
            </nav>
 
            {/* Social Icons at Bottom */}

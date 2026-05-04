@@ -1,16 +1,24 @@
-import React from 'react';
-import { FaCalendarAlt, FaUser, FaFolder, FaEye, FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import React from "react";
+import {
+  FaCalendarAlt,
+  FaUser,
+  FaFolder,
+  FaEye,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 
-const BlogDetailContent = ({ 
-  image, 
-  date, 
-  author, 
-  category, 
-  views, 
-  title, 
-  content, 
-  tags, 
-  shareLinks 
+const BlogDetailContent = ({
+  image,
+  date,
+  author,
+  category,
+  views,
+  title,
+  content,
+  tags,
+  shareLinks,
 }) => {
   // Default Data (Reference Image based)
   const defaultData = {
@@ -44,9 +52,9 @@ const BlogDetailContent = ({
     <div className=" text-zinc-300  mx-auto font-sans">
       {/* Featured Image */}
       <div className="w-full mb-8 overflow-hidden rounded-sm border border-zinc-800">
-        <img 
-          src={displayData.image} 
-          alt={displayData.title} 
+        <img
+          src={displayData.image}
+          alt={displayData.title}
           className="w-full h-auto object-cover"
         />
       </div>
@@ -58,25 +66,25 @@ const BlogDetailContent = ({
           <span>{displayData.date}</span>
         </div>
         <div className="flex items-center gap-2">
-          <FaUser className="text-white"/>
+          <FaUser className="text-white" />
           <span>BY {displayData.author}</span>
         </div>
         <div className="flex items-center gap-2">
-          <FaFolder className="text-white"/>
+          <FaFolder className="text-white" />
           <span>{displayData.category}</span>
         </div>
         <div className="flex items-center gap-2">
-          <FaEye className="text-white"/>
+          <FaEye className="text-white" />
           <span>{displayData.views}</span>
         </div>
       </div>
 
       {/* Title */}
-      <h1 className="text-white text-3xl md:text-5xl font-bold mb-8 leading-tight font-[Oswald] tracking-tight">
+      <h1 className="text-white text-3xl md:text-5xl font-bold mb-8  font-[Oswald] ">
         {displayData.title}
       </h1>
-<div 
-  className="
+      <div
+        className="
    
   
     text-[18px] 
@@ -86,23 +94,33 @@ const BlogDetailContent = ({
   
     mb-12
   "
-  dangerouslySetInnerHTML={{ __html: displayData.content }}
-/>
+        dangerouslySetInnerHTML={{ __html: displayData.content }}
+      />
 
       {/* Footer Section (Tags & Share) */}
       <div className="border-t border-dotted border-zinc-700 pt-8 mt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-        
         {/* Social Share */}
         <div className="flex items-center gap-4">
-          <span className="text-white font-bold font-[Oswald] text-lg ">Share:</span>
+          <span className="text-white font-bold font-[Oswald] text-lg ">
+            Share:
+          </span>
           <div className="flex gap-2">
-            <a href="#" className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
+            <a
+              href="#"
+              className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
+            <a
+              href="#"
+              className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+            >
               <FaLinkedinIn />
             </a>
-            <a href="#" className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
+            <a
+              href="#"
+              className="w-10 h-10 bg-[#fb4e14] flex items-center justify-center text-white hover:opacity-80 transition-opacity"
+            >
               <FaTwitter />
             </a>
           </div>
@@ -111,15 +129,14 @@ const BlogDetailContent = ({
         {/* Tags */}
         <div className="flex gap-3">
           {displayData.tags.map((tag, index) => (
-            <span 
-              key={index} 
+            <span
+              key={index}
               className="border-2 border-zinc-700 px-6 py-2 text-sm text-zinc-500 hover:border-zinc-500 hover:bg-brand-orange hover:text-white transition-colors cursor-pointer"
             >
               {tag}
             </span>
           ))}
         </div>
-
       </div>
     </div>
   );
