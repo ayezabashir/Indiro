@@ -97,7 +97,7 @@ const ContentInner6 = () => {
                     <span className="text-brand-orange text-lg">
                       <FaRegCircleCheck />
                     </span>
-                    <span className="text-white font-bold text-sm md:text-base group-hover:text-brand-orange transition-colors">
+                    <span className="text-white font-[Oswald] font-bold text-sm md:text-[18px] group-hover:text-brand-orange transition-colors">
                       {field}
                     </span>
                   </div>
