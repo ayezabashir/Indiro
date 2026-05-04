@@ -365,7 +365,7 @@ export default function TeamSection() {
   });
 
   return (
-    <section className="w-full py-20 bg-[#131C27]">
+    <section className="w-full pt-10 bg-[#131C27] ">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* ── Section header ── */}

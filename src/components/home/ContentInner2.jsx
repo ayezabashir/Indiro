@@ -49,7 +49,7 @@ const ContentInner2 = () => {
       rightClassName="p-8 lg:p-0"
       leftContent={
         <>
-          <h2 className="text-white text-2xl md:text-3xl font-bold leading-[1.1] mb-8 uppercase">
+          <h2 className="text-white text-2xl md:text-[44.8px] font-bold leading-[1.1] mb-8 uppercase">
             We Are Always Best For Industrial Solution
           </h2>
           <p className="text-white text-lg mb-10 leading-relaxed">
@@ -64,12 +64,12 @@ const ContentInner2 = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="flex justify-between border-b border-white/40 pb-5 items-center"
+                className="flex  border-b border-white/40 pb-5 items-center "
               >
-                <span className="text-brand-orange flex items-center gap-3 font-bold uppercase text-base tracking-widest">
+                <span className="text-brand-orange text-[18px] font-[Oswald] flex items-center gap-3 font-bold w-[50%] ">
                   <FaRegCircleCheck /> {item.label}
                 </span>
-                <span className="text-zinc-300 font-medium">{item.value}</span>
+                <span className="text-zinc-300 text-[18px] w-[50%] font-[Oswald] font-medium">{item.value}</span>
               </div>
             ))}
           </div>

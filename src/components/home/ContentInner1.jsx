@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, FreeMode } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import { GiAtomicSlashes, GiRobotGrab } from "react-icons/gi";
@@ -42,11 +42,15 @@ const services = [
     icon: <BsFuelPump />,
   },
 ];
+
 gsap.registerPlugin(ScrollTrigger);
+
 const ContentInner1 = () => {
   const containerRef = useRef(null);
+  const swiperRef = useRef(null);
+
   useGSAP(
-    () => { 
+    () => {
       gsap.fromTo(
         ".swiper-slide",
         {
@@ -69,28 +73,32 @@ const ContentInner1 = () => {
     },
     { scope: containerRef },
   );
-  const extendedServices = [...services, ...services];
+
+  const extendedServices = [...services, ...services, ...services];
+
   return (
     <section
       ref={containerRef}
       className="py-24 bg-brand-navy relative overflow-hidden"
     >
+   
+      
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{ backgroundImage: "url('/images/dotted.png')" }}
       ></div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="h-0.5 w-8 bg-brand-orange"></span>
-            <h5 className="text-brand-orange font-bold uppercase tracking-widest text-sm">
+            <h5 className="text-brand-orange font-bold uppercase tracking-widest text-[16px]">
               Our Services
             </h5>
             <span className="h-0.5 w-8 bg-brand-orange"></span>
           </div>
 
-          <h2 className="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+          <h2 className="text-white text-[44.8px] font-bold mb-6 leading-tight">
             WE ARE ALWAYS BEST FOR INDUSTRIAL SOLUTION
           </h2>
 
@@ -100,34 +108,38 @@ const ContentInner1 = () => {
             felis enim interdum purus.
           </p>
         </div>
+        
         <Swiper
-          modules={[FreeMode, Pagination]}
+          ref={swiperRef}
+          modules={[Pagination, Autoplay]}
           spaceBetween={30}
           slidesPerView={1}
           loop={true}
           loopedSlides={5}
-          freeMode={{
-            enabled: true,
-            sticky: false,
-            momentumBounce: false,
-          }}
+          centeredSlides={true}
           grabCursor={true}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          speed={800}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 4 },
             1280: { slidesPerView: 5 },
           }}
-          className="pb-12"
+          className="pb-12  center-scale-slider"
         >
           {extendedServices.map((service, index) => (
             <SwiperSlide key={`${service.id}-${index}`}>
-              <div className="group relative h-62.5 w-full overflow-hidden cursor-grab active:cursor-grabbing">
+              <div className="group relative h-57.5 w-full overflow-hidden cursor-grab active:cursor-grabbing">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-red-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-[#fe4c1c]/53 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 delay-100">
                   <div className="mb-6">
                     <div className="text-white text-5xl">{service.icon}</div>

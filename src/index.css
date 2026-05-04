@@ -19,7 +19,41 @@
   font-weight: normal;
   font-style: normal;
 }
+ 
+        
+.center-scale-slider .swiper-slide {
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+    height: 300px; /* ← yeh add karo — slide ki fixed height */
+}
 
+.center-scale-slider .swiper-slide .group {
+    height: 230px;
+    transition: height 0.5s ease;
+    width: 100%; /* ← yeh bhi ensure karo */
+}
+
+.center-scale-slider .swiper-slide-active .group {
+    height: 300px !important;
+}
+
+/* Show orange overlay on active slide */
+.center-scale-slider .swiper-slide-active .group > div:nth-child(2) {
+    opacity: 1 !important;
+}
+
+/* Show text/icon content on active slide */
+.center-scale-slider .swiper-slide-active .group > div:last-child {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.center-scale-slider .swiper-slide-active .group img {
+    transform: scale(1.1);
+}
+        
+    
 /* Base layer mein body par default apply kar dena safe rehta hai */
 @layer base {
   body {
@@ -66,4 +100,7 @@
 
 .animate-side {
   animation: side-to-side 1.5s ease-in-out infinite;
+}
+h1 , h2 ,h3 ,h4 ,h5 ,h6 {
+  font-family: Oswald;
 }

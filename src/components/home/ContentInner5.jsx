@@ -30,13 +30,13 @@ const ContentInner5 = () => {
 
         <div className="flex items-center justify-center gap-4 mb-6">
           <span className="h-[2px] w-8 bg-brand-orange"></span>
-          <h5 className="text-brand-orange font-bold uppercase tracking-[0.2em] text-sm md:text-base">
+          <h5 className="text-brand-orange font-bold uppercase  text-sm md:text-[20px]">
             Watch Our Video
           </h5>
           <span className="h-[2px] w-8 bg-brand-orange"></span>
         </div>
 
-        <h2 className="text-white text-2xl md:text-4xl font-bold uppercase mb-8 leading-tight max-w-3xl mx-auto">
+        <h2 className="text-white text-2xl md:text-[44.8px] font-bold uppercase mb-8 leading-tight max-w-3xl mx-auto">
           We Are Always Best For Industrial Solution
         </h2>
 
