@@ -54,7 +54,7 @@ const ContentInner6 = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative py-24 md:py-32 bg-brand-navy overflow-hidden"
+      className="relative py-24 md:py-32 bg-brand-navy"
     >
       <div
         className="absolute inset-0 z-0 opacity-20 pointer-events-none filter grayscale-100"
@@ -65,7 +65,7 @@ const ContentInner6 = () => {
         }}
       ></div>
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container  flex flex-col lg:flex-row mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-case-left max-w-2xl">
             <div className="flex items-center gap-3 mb-5">
@@ -89,9 +89,9 @@ const ContentInner6 = () => {
             <ShiftingButton to="/" children="VIEW MORE" />
           </div>
 
-          <div className="animate-case-right relative aspect-[5/4] w-full overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 grid grid-cols-[1.2fr_1fr] bg-brand-navy">
-              <div className="flex flex-col justify-center p-8 md:p-12 space-y-5">
+          <div className="animate-case-right  relative aspect-[5/4] w-full  shadow-2xl">
+            <div className=" flex flex-col lg:flex-row bg-brand-navy">
+              <div className="flex flex-col w-[100%] lg:w-[55%]  justify-center p-8 md:p-12 space-y-5">
                 {engineeringFields.map((field, idx) => (
                   <div key={idx} className="flex items-center gap-3 group">
                     <span className="text-brand-orange text-lg">
@@ -103,7 +103,7 @@ const ContentInner6 = () => {
                   </div>
                 ))}
               </div>
-              <div className="relative overflow-hidden">
+              <div className="relative w-[100%] lg:w-[45%] ">
                 <img
                   src="/images/about17.jpg"
                   alt="Industrial engineer working with tablet"

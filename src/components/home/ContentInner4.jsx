@@ -47,11 +47,11 @@ const ContentInner4 = () => {
   return (
     <SplitLayout
       bgImage="/images/content4bgimg.jpg"
-      containerClassName="lg:grid-cols-[5fr_4fr] py-20"
+      containerClassName="lg:grid-cols-[5fr_4fr] lg:py-20"
       isAnimating={isAnimating}
       rightClassName="border-t-0 flex flex-col gap-4 pl-8 lg:pl-0 pr-8"
       leftContent={
-        <div className="max-w-2xl">
+        <div >
           <div className="flex items-center gap-3 mb-4">
             <h5 className="text-brand-orange font-bold uppercase tracking-widest text-sm">
               Latest Case Studies
@@ -63,12 +63,12 @@ const ContentInner4 = () => {
             Industries Provide <br /> Best Services
           </h2>
 
-          <div className="flex flex-wrap border border-white/10 mb-10">
+          <div className="flex border border-white/10 mb-10">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => handleTabChange(tab.id)}
-                className={`flex-1 px-6 py-4 font-[Oswald] text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
+                className={`flex-1 lg:px-6 py-4 font-[Oswald] text-sm font-bold uppercase tracking-wide transition-all duration-300 ${
                   activeTab === tab.id
                     ? "bg-brand-orange text-white"
                     : "text-zinc-400 hover:text-white bg-transparent"
@@ -83,8 +83,8 @@ const ContentInner4 = () => {
             {currentContent.description}
           </p>
 
-          <div className="flex  gap-12 mb-12">
-            <div className="flex items-start font-[Oswald] gap-4">
+          <div className="flex lg:flex-row flex-col gap-12 mb-12">
+            <div className="flex   items-start font-[Oswald] gap-4">
               <span className="text-white text-5xl font-bold transition-all duration-300">
                 {currentContent.users}
               </span>
@@ -95,7 +95,7 @@ const ContentInner4 = () => {
                 </p>
               </div>
             </div>
-            <div className="flex  w-[50%]   items-start gap-2 flex-nowrap shrink-0">
+            <div className="flex  lg:w-[50%]   items-start gap-2 flex-nowrap shrink-0">
               <span className="text-white text-5xl font-bold transition-all duration-300">
                 {currentContent.brands}
               </span>

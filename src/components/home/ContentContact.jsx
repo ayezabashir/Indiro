@@ -91,7 +91,7 @@ const containerRef = useRef(null);
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-8 bg-brand-slate overflow-hidden"
+      className="py-24 px-2 lg:px-8 bg-brand-slate overflow-hidden"
     >
       <div className="container mx-auto px-6">
         <div className="animate-row-top grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
@@ -115,15 +115,15 @@ const containerRef = useRef(null);
               </div>
             </div>
 
-            <div className="animate-float-badge absolute -top-6 -left-6 z-20 bg-brand-orange p-8 text-white w-40 h-48 flex flex-col justify-center shadow-2xl">
-              <span className="text-5xl font-black">50+</span>
-              <span className="text-sm font-bold uppercase leading-tight mt-2">
-                Years of <br /> Experience
+            <div className="animate-float-badge absolute -top-10 lg:-top-19 -left-6 z-20 bg-brand-orange p-1 lg:p-4 text-white w-30 h-20 lg:w-40 lg:h-48 flex-col shadow-2xl">
+              <span className="lg:text-[55px] font-[Oswald] text-lg font-black">50+</span> <br/>
+              <span className="lg:text-[25px] text-[16px] font-bold font-[Oswald] leading-tight lg:mt-2">
+                Years of Experience
               </span>
             </div>
           </div>
 
-          <div className="max-w-xl">
+          <div>
             <div className="flex items-center gap-3 mb-4">
               <h5 className="text-brand-orange font-bold uppercase tracking-widest text-sm">
                 Contact Us
@@ -145,9 +145,7 @@ const containerRef = useRef(null);
 
        <div ref={containerRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {infoCards.map((card, idx) => {
-        // Logic: 
-        // 1. Agar koi card hovered hai (hoveredIdx !== null), toh check karo ye wahi card hai ya nahi.
-        // 2. Agar koi card hovered nahi hai, toh sirf index 1 (center) ko orange rakho.
+  
         const isOrange = hoveredIdx !== null 
           ? hoveredIdx === idx 
           : idx === 1;
@@ -157,15 +155,15 @@ const containerRef = useRef(null);
             key={idx}
             onMouseEnter={() => setHoveredIdx(idx)}
             onMouseLeave={() => setHoveredIdx(null)}
-            className={`animate-info-card group flex items-center gap-6 p-10 transition-all duration-500 cursor-default
+            className={`animate-info-card group  w-full flex items-center gap-6 p-4 lg:p-10 transition-all duration-500 cursor-default
               ${isOrange ? "bg-brand-orange" : "bg-[#1a2332]"}
             `}
           >
             <div className="text-white transition-colors">
               <FaRegCheckCircle size={30} />
             </div>
-            <div className="flex flex-col">
-              <h4 className="text-white font-black text-[24px] leading-tight mb-1">
+            <div className="flex  flex-col">
+              <h4 className="text-white font-black text-[20px] lg:text-[24px] leading-tight mb-1">
                 {card.title}
               </h4>
               <span className={`text-sm uppercase font-bold tracking-wider transition-colors
