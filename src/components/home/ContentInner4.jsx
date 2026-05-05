@@ -10,7 +10,7 @@ const ImageReveal = ({ src, alt }) => {
       <motion.div
         initial={{ x: "-100%" }}
         whileInView={{ x: "100%" }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}  // Changed from true to false
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="absolute inset-0 bg-[#FE4C1C] z-10"
       />
@@ -19,7 +19,7 @@ const ImageReveal = ({ src, alt }) => {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: false }}  // Changed from true to false
         transition={{ delay: 0.4, duration: 0.5 }}
       >
         <img

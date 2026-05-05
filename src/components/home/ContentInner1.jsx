@@ -88,7 +88,7 @@ const ContentInner1 = () => {
         style={{ backgroundImage: "url('/images/dotted.png')" }}
       ></div>
 
-      <div className="container mx-auto px-16 relative z-10">
+      <div className="container mx-auto px-4 lg:px-16 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
             <span className="h-0.5 w-8 bg-brand-orange"></span>
@@ -98,7 +98,7 @@ const ContentInner1 = () => {
             <span className="h-0.5 w-8 bg-brand-orange"></span>
           </div>
 
-          <h2 className="text-white text-[44.8px] font-bold mb-6 leading-tight">
+          <h2 className="text-white text-2xl lg:text-[44.8px] font-bold mb-6 leading-tight">
             WE ARE ALWAYS BEST FOR INDUSTRIAL SOLUTION
           </h2>
 
