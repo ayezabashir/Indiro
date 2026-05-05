@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BiChevronDown, BiPhone } from "react-icons/bi";
 import { BsEnvelope } from "react-icons/bs";
+import { IoClose } from "react-icons/io5";
+
+import { LuMenu } from "react-icons/lu";
 import { 
   FaFacebookF, 
   FaTwitter, 
@@ -13,6 +16,7 @@ import {
 import { Link } from "react-router-dom";
 import logoimg from "/images/logo-white.png";
 import ShiftingButton from "../common/ShiftingButton";
+import { CrossIcon } from "lucide-react";
 
 const Header2 = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -118,9 +122,8 @@ const Header2 = () => {
             onClick={() => setDrawerOpen(!drawerOpen)}
             className="w-12 h-12 bg-brand-orange flex flex-col items-center justify-center gap-1.5 transition-all active:scale-95"
           >
-            <span className="w-6 h-[2px] bg-white"></span>
-            <span className="w-6 h-[2px] bg-white"></span>
-            <span className="w-6 h-[2px] bg-white"></span>
+          {drawerOpen ? <IoClose  className="text-white" size={30}/>: <LuMenu  className="text-white" size={30}/>}
+         
           </button>
         </div>
       </header>

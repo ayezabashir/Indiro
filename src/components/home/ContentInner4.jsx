@@ -1,6 +1,37 @@
 import { useState } from "react";
 import SplitLayout from "../common/SplitLayout";
 import ShiftingButton from "../common/ShiftingButton";
+import { motion } from "framer-motion";
+
+const ImageReveal = ({ src, alt }) => {
+  return (
+    <div className="relative overflow-hidden my-5 group">
+      {/* Orange Reveal Box */}
+      <motion.div
+        initial={{ x: "-100%" }}
+        whileInView={{ x: "100%" }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="absolute inset-0 bg-[#FE4C1C] z-10"
+      />
+
+      {/* Actual Image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.4, duration: 0.5 }}
+      >
+        <img
+          src={src}
+          alt={alt}
+          className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-500"
+        />
+      </motion.div>
+    </div>
+  );
+};
+
 
 const tabData = {
   women: {
@@ -113,20 +144,8 @@ const ContentInner4 = () => {
       }
       rightContent={
         <>
-          <div className="my-5">
-            <img
-              src="/images/content4img1.jpg"
-              alt="Industrial Team"
-              className="w-full h-full object-cover grayscale-30 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
-          <div className="my-5">
-            <img
-              src="/images/content4img2.jpg"
-              alt="Industrial Work"
-              className="w-full h-full object-cover grayscale-30 hover:grayscale-0 transition-all duration-500"
-            />
-          </div>
+     <ImageReveal src="/images/content4img1.jpg" alt="Industrial Team" />
+      <ImageReveal src="/images/content4img2.jpg" alt="Industrial Work" />
         </>
       }
     />
